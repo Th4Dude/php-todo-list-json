@@ -10,6 +10,10 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- VueJs -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Css -->
     <link rel="stylesheet" href="style.css">
 
@@ -22,11 +26,17 @@
         <h1>Todo List</h1>
         <div class="container-main">
             <div>
-                <div v-for="todo in todos">
+                <div v-for="(todo,index) in todos">
                     <p>{{ todo.text }}</p>
+                    <i class="fa-solid fa-trash" @click="removeTodo(index)"></i>
                 </div>
             </div>
         </div>
+
+        <form id="addTodoForm" @submit.prevent="addTodo">
+            <input type="text" v-model="newTodo" placeholder="Aggiungi una cosa">
+            <button type="submit">Add</button>
+        </form>
 
     </div>
 
