@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,33 +12,35 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Css -->
     <link rel="stylesheet" href="style.css">
-    
+
 </head>
+
 <body>
 
 
 
 
     <div id="app">
-
-
-
-
-
-
-
-
-
+        
+        <h1>Todo List</h1>
+        <div class="container-main">
+            <div>
+                <div v-for="todo in todos">
+                    <p>{{ todo.text }}</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
 
 
-    
+
 
 
     <!-- js -->
     <script src="main.js"></script>
 
 </body>
+
 </html>
